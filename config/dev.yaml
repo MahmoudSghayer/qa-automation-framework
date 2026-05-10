@@ -1,0 +1,27 @@
+environment: dev
+
+app:
+  base_url: "https://opensource-demo.orangehrmlive.com"
+  api_base_url: "https://opensource-demo.orangehrmlive.com/web/index.php/api/v2"
+
+browser:
+  default: chromium
+  headless: false                 # dev runs visibly
+  viewport: {width: 1440, height: 900}
+  timeout_ms: 30000
+  navigation_timeout_ms: 45000
+  video: "off"
+  screenshot: only-on-failure
+  trace: "on"
+
+api:
+  timeout_seconds: 30
+  retries: 1
+
+database:
+  enabled: false
+  pool_size: 2
+
+retry:
+  max_attempts: 1
+  reruns_delay_seconds: 0

@@ -1,0 +1,28 @@
+environment: prod
+
+app:
+  base_url: "https://opensource-demo.orangehrmlive.com"
+  api_base_url: "https://opensource-demo.orangehrmlive.com/web/index.php/api/v2"
+
+browser:
+  default: chromium
+  headless: true
+  viewport: {width: 1920, height: 1080}
+  timeout_ms: 45000
+  navigation_timeout_ms: 60000
+  video: retain-on-failure
+  screenshot: only-on-failure
+  trace: retain-on-failure
+
+api:
+  timeout_seconds: 20
+  retries: 3
+
+database:
+  enabled: true
+  pool_size: 10
+  read_only: true                 # safety guard for prod
+
+retry:
+  max_attempts: 3
+  reruns_delay_seconds: 2

@@ -1,0 +1,29 @@
+environment: staging
+
+app:
+  base_url: "https://opensource-demo.orangehrmlive.com"
+  api_base_url: "https://opensource-demo.orangehrmlive.com/web/index.php/api/v2"
+
+browser:
+  default: chromium
+  headless: true
+  viewport:
+    width: 1920
+    height: 1080
+  timeout_ms: 30000
+  navigation_timeout_ms: 45000
+  video: retain-on-failure       # off | on | retain-on-failure
+  screenshot: only-on-failure
+  trace: retain-on-failure
+
+api:
+  timeout_seconds: 15
+  retries: 2
+
+database:
+  enabled: false                  # demo site has no public DB; flip on for real envs
+  pool_size: 5
+
+retry:
+  max_attempts: 2
+  reruns_delay_seconds: 1

@@ -1,0 +1,14 @@
+{
+  "invalid_credentials": [
+    {"username": "Admin",        "password": "wrong-pass",    "expected_error": "Invalid credentials"},
+    {"username": "wrong-user",   "password": "admin123",      "expected_error": "Invalid credentials"},
+    {"username": "wrong-user",   "password": "wrong-pass",    "expected_error": "Invalid credentials"},
+    {"username": "ADMIN",        "password": "admin123",      "expected_error": null},
+    {"username": " Admin ",      "password": "admin123",      "expected_error": "Invalid credentials"}
+  ],
+  "empty_fields": [
+    {"username": "",      "password": "",         "missing": ["Username", "Password"]},
+    {"username": "Admin", "password": "",         "missing": ["Password"]},
+    {"username": "",      "password": "admin123", "missing": ["Username"]}
+  ]
+}

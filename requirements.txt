@@ -1,0 +1,36 @@
+# --- Core test framework ---
+pytest==8.3.3
+pytest-xdist==3.6.1            # parallel execution (-n auto)
+pytest-rerunfailures==14.0     # automatic retry on flake
+pytest-html==4.1.1             # built-in HTML report
+pytest-metadata==3.1.1
+pytest-base-url==2.1.0
+
+# --- Browser automation ---
+playwright==1.47.0
+pytest-playwright==0.5.2
+
+# --- API testing ---
+requests==2.32.3
+pydantic==2.9.2                 # request/response models + validation
+jsonschema==4.23.0
+
+# --- Database ---
+SQLAlchemy==2.0.35
+PyMySQL==1.1.1                  # swap for psycopg2-binary if Postgres
+cryptography==43.0.1
+
+# --- Reporting ---
+allure-pytest==2.13.5
+
+# --- Utilities ---
+PyYAML==6.0.2
+python-dotenv==1.0.1
+faker==30.3.0                   # realistic test data
+tenacity==9.0.0                 # smart retries with backoff
+loguru==0.7.2                   # better logging than stdlib
+
+# --- Dev / quality ---
+ruff==0.6.9
+black==24.10.0
+mypy==1.11.2

@@ -1,0 +1,25 @@
+{
+  "valid_applications": [
+    {
+      "leave_type": "CAN - Personal",
+      "from_date": "2026-06-01",
+      "to_date": "2026-06-02",
+      "comment": "Family event"
+    },
+    {
+      "leave_type": "CAN - Vacation",
+      "from_date": "2026-07-15",
+      "to_date": "2026-07-19",
+      "comment": "Annual holiday"
+    }
+  ],
+  "invalid_date_ranges": [
+    {
+      "leave_type": "CAN - Personal",
+      "from_date": "2026-06-10",
+      "to_date": "2026-06-05",
+      "comment": "End before start",
+      "expected_error": "To date should be after from date"
+    }
+  ]
+}
