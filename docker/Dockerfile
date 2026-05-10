@@ -25,10 +25,16 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 COPY . .
 
 # Generated dirs (ignored by .dockerignore otherwise)
-RUN mkdir -p reports/allure-results reports/screenshots reports/videos reports/logs
+# Create non-root user first
+RUN useradd -m -u 1001 qauser
 
-# Run as non-root for safety
-RUN useradd -m -u 1001 qauser && chown -R qauser:qauser /app
+# Create writable output dirs and give qauser ownership of everything in /app
+RUN mkdir -p /app/reports/allure-results \
+             /app/reports/screenshots \
+             /app/reports/videos \
+             /app/reports/logs \
+    && chown -R qauser:qauser /app
+
 USER qauser
 
 # Default command runs smoke; override with `docker run ... pytest -m regression`
