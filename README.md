@@ -1,7 +1,7 @@
 # QA Automation Framework — Python · Playwright · Pytest
 
-[![CI](https://github.com/<your-username>/qa-automation-framework/actions/workflows/ci.yml/badge.svg)](https://github.com/<your-username>/qa-automation-framework/actions/workflows/ci.yml)
-[![Allure Report](https://img.shields.io/badge/Allure-report-success?logo=qameta)](https://<your-username>.github.io/qa-automation-framework/)
+[![CI](https://github.com/<MahmoudSghayer>/qa-automation-framework/actions/workflows/ci.yml/badge.svg)](https://github.com/<MahmoudSghayer>/qa-automation-framework/actions/workflows/ci.yml)
+[![Allure Report](https://img.shields.io/badge/Allure-report-success?logo=qameta)](https://<MahmoudSghayer>.github.io/qa-automation-framework/)
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue?logo=python)](https://www.python.org/)
 [![Playwright](https://img.shields.io/badge/Playwright-1.47-2EAD33?logo=playwright)](https://playwright.dev/python/)
 [![Pytest](https://img.shields.io/badge/Pytest-8.3-blue?logo=pytest)](https://docs.pytest.org/)
@@ -146,7 +146,7 @@ qa-automation-framework/
 ### Local install (3 commands)
 
 ```bash
-git clone https://github.com/<your-username>/qa-automation-framework.git
+git clone https://github.com/MahmoudSghayer/qa-automation-framework.git
 cd qa-automation-framework
 
 python -m venv .venv && source .venv/bin/activate     # Windows: .venv\Scripts\activate
@@ -268,6 +268,6 @@ MIT. See [LICENSE](LICENSE).
 
 ## 👤 Author
 
-**Your Name** — [LinkedIn](https://linkedin.com/in/your-handle) · [GitHub](https://github.com/your-username)
+**Your Name** — [LinkedIn](www.linkedin.com/in/ma7muds) · [GitHub](https://github.com/MahmoudSghayer)
 
 > Built as a portfolio project to demonstrate enterprise QA practices. Reach out — happy to walk through any part of it.
