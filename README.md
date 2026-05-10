@@ -1,7 +1,7 @@
 # QA Automation Framework — Python · Playwright · Pytest
 
-[![CI](https://github.com/<MahmoudSghayer>/qa-automation-framework/actions/workflows/ci.yml/badge.svg)](https://github.com/<MahmoudSghayer>/qa-automation-framework/actions/workflows/ci.yml)
-[![Allure Report](https://img.shields.io/badge/Allure-report-success?logo=qameta)](https://<MahmoudSghayer>.github.io/qa-automation-framework/)
+[![CI](https://github.com/MahmoudSghayer/qa-automation-framework/actions/workflows/ci.yml/badge.svg)](https://github.com/MahmoudSghayer/qa-automation-framework/actions/workflows/ci.yml)
+[![Allure Report](https://img.shields.io/badge/Allure-report-success?logo=qameta)](https://MahmoudSghayer.github.io/qa-automation-framework/)
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue?logo=python)](https://www.python.org/)
 [![Playwright](https://img.shields.io/badge/Playwright-1.47-2EAD33?logo=playwright)](https://playwright.dev/python/)
 [![Pytest](https://img.shields.io/badge/Pytest-8.3-blue?logo=pytest)](https://docs.pytest.org/)
