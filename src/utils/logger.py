@@ -19,7 +19,12 @@ from pathlib import Path
 from loguru import logger
 
 LOG_DIR = Path("reports/logs")
-LOG_DIR.mkdir(parents=True, exist_ok=True)
+try:
+    LOG_DIR.mkdir(parents=True, exist_ok=True)
+    _file_logging_enabled = True
+except (PermissionError, OSError):
+    # In sandboxed environments (Docker non-root, read-only FS), skip file logging
+    _file_logging_enabled = False
 
 # Reset default handler so we control format precisely
 logger.remove()
@@ -40,16 +45,17 @@ logger.add(
 )
 
 # File — verbose, rotated, retained 7 days
-logger.add(
-    LOG_DIR / "framework_{time:YYYY-MM-DD}.log",
-    level="DEBUG",
-    rotation="50 MB",
-    retention="7 days",
-    compression="zip",
-    format="{time:YYYY-MM-DD HH:mm:ss} | {level: <8} | {name}:{function}:{line} | {message}",
-    enqueue=True,            # safe under pytest-xdist parallel workers
-    backtrace=True,
-    diagnose=False,          # keep secrets out of logs
-)
+if _file_logging_enabled:
+    logger.add(
+        LOG_DIR / "framework_{time:YYYY-MM-DD}.log",
+        level="DEBUG",
+        rotation="50 MB",
+        retention="7 days",
+        compression="zip",
+        format="{time:YYYY-MM-DD HH:mm:ss} | {level: <8} | {name}:{function}:{line} | {message}",
+        enqueue=True,
+        backtrace=True,
+        diagnose=False,
+    )
 
 __all__ = ["logger"]
