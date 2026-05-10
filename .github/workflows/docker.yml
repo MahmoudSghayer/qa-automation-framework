@@ -1,0 +1,33 @@
+name: Dockerized Tests
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  docker-tests:
+    name: Run tests inside Docker
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build image
+        run: docker build -f docker/Dockerfile -t qa-framework:ci .
+
+      - name: Run smoke tests in container
+        run: |
+          docker run --rm \
+            -e TEST_ENV=staging \
+            -e HEADLESS=true \
+            -e ORANGEHRM_USERNAME="${{ secrets.ORANGEHRM_USERNAME || 'Admin' }}" \
+            -e ORANGEHRM_PASSWORD="${{ secrets.ORANGEHRM_PASSWORD || 'admin123' }}" \
+            -v ${{ github.workspace }}/reports:/app/reports \
+            qa-framework:ci \
+            pytest -m smoke -n 2
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: docker-allure-results
+          path: reports/allure-results
