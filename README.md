@@ -268,6 +268,6 @@ MIT. See [LICENSE](LICENSE).
 
 ## 👤 Author
 
-**Your Name** — [LinkedIn](www.linkedin.com/in/ma7muds) · [GitHub](https://github.com/MahmoudSghayer)
+**Mahmoud Sghayer** — [LinkedIn](https://linkedin.com/in/ma7muds) · [GitHub](https://github.com/MahmoudSghayer)
 
 > Built as a portfolio project to demonstrate enterprise QA practices. Reach out — happy to walk through any part of it.
